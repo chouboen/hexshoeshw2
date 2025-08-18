@@ -1,0 +1,67 @@
+/* 放在商品詳情頁的CSS */
+/* 產品圖片的格線設定 */
+/* 新設計內層的格線系統，分成12格，每張卡片佔6格，兩張卡片12格 */
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  /* 整個大欄位的左右兩邊要用margin負值往內推，避免超出版型 */
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.product-col {
+  width: calc(100% / 12 * 6);
+  /* 間距8px，所以設定左右4px */
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* 刪除線價格樣式設定 */
+.del-price {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--neutral-500);
+  padding-left: 8px;
+}
+
+/* 商品顏色圖片大小&文字設定 */
+.product-color {
+  width: 64px;
+  text-align: center;
+  color: var(--neutral-600);
+}
+
+/* 商品尺寸按鈕樣式 */
+.btn-product-size {
+  border: 1px solid var(--neutral-300);
+  width: 160px;
+}
+
+.btn-product-size.active,
+.btn-product-size:hover {
+  border: 1px solid var(--neutral-900);
+  width: 160px;
+}
+
+/* 收藏＆預約 */
+.product-action {
+  display: flex;
+  gap: 8px;
+}
+
+.product-action .btn {
+  width: 50%;
+}
+
+/* 商品資訊 */
+.product-info-title {
+  font-weight: 500;
+}
+
+.product-info-item p {
+  color: var(--neutral-600);
+}
+
+.product-info-item {
+  border-bottom: 1px solid var(--neutral-300);
+}

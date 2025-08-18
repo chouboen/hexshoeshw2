@@ -1,0 +1,354 @@
+/* 第五步：設定&引入字體，外部引用資源通常會放在最上方 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap");
+
+/* 第一步：引入css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 第七步：顏色設定（CBTL，comebacktolearn） */
+/* 先設定主題色，其他顏色再依序去figma複製過來建立設定，並往後套用在標籤樣式上 */
+:root {
+  --primary-400: #57a203;
+  --primary-100: #f5fee7;
+  --Neutral-0: #ffffff;
+  --Neutral-100: #f8f9fa;
+  --Neutral-300: #dee2e6;
+  --Neutral-600: #6c757d;
+  --Neutral-900: #212529;
+}
+/* 設定顏色變數，好處是如果主色改，可以一次連動更改 */
+
+/* 建立好專案結構後，下一步先觀察設計稿，設計共同版型 */
+/* 第二步：標籤基本樣式設定 */
+/* 讓CSS設定的寬度屬性直接等於元素在畫面中顯示的寬度 */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* 第三步：設定圖片置中（CBTL，記得學完做筆記） */
+img {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* 第四步：設定a標籤統一格式，設定好可以先測試一下 */
+a {
+  /* 將原本的顏色設定改為引入顏色變數，以下也一起改 */
+  /* color: #57a203; */
+  color: var(--primary-400);
+  /* 設定下底線偏移（CBTL，做筆記） */
+  text-underline-offset: 4px;
+  /* 因為每個連結都是獨立一行，所以設定成block */
+  display: block;
+}
+
+/* 引入好字體之後就可以設定body的字體 */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  /* lh=line-height */
+  line-height: 1.5;
+  /* ls=letter-spacing */
+  letter-spacing: 0.05em;
+  color: var(--Neutral-900);
+}
+
+/* 第六步：設定標題通用樣式 */
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: var(--Neutral-0);
+}
+
+/* 這個頁面好像沒有h2...? */
+
+h3 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: var(--Neutral-0);
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: var(--Neutral-900);
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: var(--primary-400);
+}
+
+p {
+  padding-bottom: 4px;
+}
+
+.text-small {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--Neutral-600);
+  font-weight: 400;
+}
+
+/* 設定顏色並引入上面設定好的變數 */
+.text-primary-400 {
+  color: var(--primary-400);
+}
+/* （設定文字主題色） */
+
+.bg-primary-100 {
+  background-color: var(--primary-100);
+}
+/* （設定banner下面那塊綠色的div背景） */
+
+.bg-neutral-100 {
+  background-color: var(--Neutral-100);
+}
+/* （設定footer的背景色） */
+
+/* 第七步：加上container的通用樣式 */
+.container {
+  width: 856px;
+  margin: 0 auto;
+}
+
+/* 第八步：設定間距，記得先觀察大中小區塊，並且統一推擠方向 */
+/* 設定大區塊上下間距 */
+.py-64 {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* 設定每個區塊向下推擠的間距 */
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+/* 容器內物件對應外容器的向下推擠間距 */
+.pb-48 {
+  padding-bottom: 48px;
+}
+
+.pb-12 {
+  padding-bottom: 12px;
+}
+
+.p-32 {
+  padding: 32px;
+}
+
+.pr-8 {
+  padding-right: 8px;
+}
+
+.pl-8 {
+  padding-left: 8px;
+}
+
+.p-8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* page */
+.header {
+  background-image: url(./img/hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 152px 0;
+  text-align: center;
+}
+
+.div1 {
+  text-align: center;
+  background-color: var(--primary-100);
+  border-radius: 12px;
+}
+
+.intro img {
+  width: 1076px;
+  margin-right: -110px;
+  margin-left: -110px;
+}
+
+.section-line {
+  border-bottom: 1px solid var(--Neutral-300);
+}
+
+.left-line {
+  border-left: 1px solid var(--Neutral-900);
+}
+
+.list-disc {
+  list-style-type: disc;
+  padding-left: 24px;
+}
+
+.left-line-gray {
+  border-left: 3px solid var(--Neutral-300);
+  padding-left: 12px;
+}
+
+.bi {
+  vertical-align: bottom;
+}
+
+.footer {
+  background-color: var(--Neutral-100);
+  text-align: center;
+}
